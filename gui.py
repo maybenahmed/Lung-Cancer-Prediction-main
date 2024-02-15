@@ -21,7 +21,7 @@ with open(scaler_file, 'rb') as f:
 # Define the home page route
 @app.route('/')
 def home():
-    return render_template('form.html')
+    return render_template('index.html')
 
 # Define the form page route
 @app.route('/form')
