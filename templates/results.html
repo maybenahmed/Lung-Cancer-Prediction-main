@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #343a40;
+            font-style: italic;
+        }
+
+        .alert {
+            margin-top: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            font-style: italic;
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .alert-warning {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+
+        p {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #343a40;
+            font-style: italic;
+        }
+
+        .consult-doctor {
+            color: #dc3545;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .consult-doctor:hover {
+            color: #bd2130;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color-glass/48/lungs.png">
+</head>
+<body>
+<div class="container">
+    <h1>Prediction Results</h1>
+    <!-- You can include the predicted result directly in the HTML -->
+    <div class="alert {% if outcome == 'Low' %}alert-success{% elif outcome == 'Medium' %}alert-warning{% else %}alert-danger{% endif %}" role="alert">
+        The predicted level of Lung Cancer is {{ outcome }}.
+    </div>
+    <p>If you have any concerns about your lung health, please consult a doctor.</p>
+    <p>Click <a href="https://www.google.com/maps/search/lung+cancer+doctors/" class="consult-doctor">here</a> to find a doctor near you.</p>
+</div>
+</body>
+</html>
