@@ -26,7 +26,7 @@ def home():
 # Define the form page route
 @app.route('/form')
 def form():
-    return render_template('form.html')
+    return render_template('index.html')
 
 @app.route('/results', methods=['GET', 'POST'])
 def results():
