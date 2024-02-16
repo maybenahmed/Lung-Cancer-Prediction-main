@@ -3,12 +3,11 @@ import numpy as np
 from flask import Flask, render_template, request, redirect
 from sklearn.preprocessing import StandardScaler
 from keras.models import load_model
-import logging
 
 app = Flask(__name__)
 
 # Configure logging
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 # Load the trained machine learning model
 model = load_model('my_model.h5')
@@ -18,12 +17,10 @@ scaler_file = 'scaler.pkl'
 with open(scaler_file, 'rb') as f:
     scaler = pickle.load(f)
 
-# Define the home page route
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# Define the form page route
 @app.route('/form')
 def form():
     return render_template('index.html')
@@ -32,7 +29,7 @@ def form():
 def results():
     if request.method == 'POST':
         # Logging form data for debugging
-        app.logger.debug("Form data: %s", request.form)
+        # app.logger.debug("Form data: %s", request.form)
 
         # Extract the form data
         age = int(request.form.get('age'))
@@ -40,13 +37,7 @@ def results():
 
         # Handle gender input more robustly
         gender_mapping = {'Male': 1, 'Female': 2}
-
-        gender_numeric = gender_mapping.get(gender, None)
-
-        if gender_numeric is None:
-            # Handle unexpected input, perhaps set a default value or return an error
-            app.logger.warning("Unexpected gender input: %s", gender)
-            gender_numeric = 0  # Set a default value
+        gender_numeric = gender_mapping.get(gender, 0)  # Set a default value if not found
 
         air_pollution = int(request.form.get('air_pollution'))
         alcohol_use = int(request.form.get('alcohol_use'))
