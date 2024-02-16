@@ -1,4 +1,6 @@
-Flask==2.0.3
-numpy==1.21.4
-scikit-learn==0.24.2
-keras==2.8.0
+Flask
+numpy
+scikit-learn
+keras
+jinja2
+gunicorn
