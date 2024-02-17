@@ -1,4 +1,5 @@
-streamlit_version = "1.31.1"
-numpy_version = "1.26.2"
-scikit_learn_version = "1.3.2"
-keras_version = "2.15.0"
+streamlit_version == "1.31.1"
+numpy_version == "1.26.2"
+scikit_learn_version == "1.3.2"
+keras_version == "2.15.0"
+
