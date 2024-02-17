@@ -1,6 +1,5 @@
-Flask
-numpy
-scikit-learn
-keras
-jinja2
-gunicorn
+streamlit==0.91.2
+numpy==1.21.2
+scikit-learn==0.24.2
+tensorflow==2.6.0
+
